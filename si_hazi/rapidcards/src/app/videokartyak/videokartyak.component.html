@@ -1,0 +1,56 @@
+<header>
+    <div class="logo">RapidCards</div>
+    <p>A legjobb videókártyák egy helyen</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a routerLink="/fooldal">Főoldal</a></li>
+        <li><a routerLink="/videokartyak" class="active">Videókártyák</a></li>
+    </ul>
+</nav>
+
+<section class="products-header">
+    <h1>Videókártyák</h1>
+    <p>Válogasson a legújabb videókártyák közül a legjobb áron!</p>
+</section>
+
+<section class="filters">
+    <button (click)="listVideokartyak()" class="filter-btn">Mind</button>
+    <button (click)="listNVIDIAVideokartyak()" class="filter-btn">NVIDIA</button>
+    <button (click)="listAMDVideokartyak()" class="filter-btn">AMD</button>
+</section>
+
+<section class="product-grid">
+    <div *ngFor="let videokartya of videokartyak" class="product-card">
+        <div class="product-image">
+            <img src="/gpu-image.png" alt="NVIDIA GeForce RTX 4090">
+        </div>
+        <div class="product-info">
+            <div class="product-category">{{videokartya.marka}}</div>
+            <h3 class="product-title">{{videokartya.marka}} {{videokartya.modell}}</h3>
+            <div class="product-specs">
+                <p>VRAM: {{videokartya.vram / 1024}}GB</p>
+                <p>Boost órajel: {{videokartya.boost_clock}}MHz</p>
+                <p>Magok: {{videokartya.cores}}</p>
+            </div>
+            <div class="product-price">??? ??? Ft</div>
+            <div class="product-actions">
+                <a href="#" class="btn btn-primary">Kosárba</a>
+                <a href="#" class="btn btn-secondary">Részletek</a>
+            </div>
+        </div>
+    </div>
+    
+   
+</section>
+
+<footer>
+    <div class="footer-links">
+        <a href="#">Adatvédelmi irányelvek</a>
+        <a href="#">ÁSZF</a>
+        <a href="#">Szállítási információk</a>
+        <a href="#">Kapcsolat</a>
+    </div>
+    <p>&copy; 2025 RapidCards - Minden jog fenntartva</p>
+</footer>
